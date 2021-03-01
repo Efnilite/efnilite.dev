@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--navbar-color);
+}
+
+/* --------------------------------------------------------------------- */
+
+:root {
+    --primary-color: white;
+    --text-color: black;
+    --navbar-color: #ebebeb;
+    --selected-color: #c9c9c9;
+    --fillable-color: white;
+}
+
+.darkmode {
+    --primary-color: #424242;
+    --text-color: white;
+    --navbar-color: #313131;
+    --selected-color: #666666;
+    --fillable-color: #808080;
+}
+
+.logo {
+    animation: fadeIn ease 2s;
+    height: 5vw;
+    width: 5vw;
+    margin-left: 47%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+.navbar {
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 5vw;
+}
+
+/* --------------------------------------------------------------------- */
+/* Dropdown */
+
+.dropdown-line {
+    width: auto;
+    max-height: 10px;
+    margin: 0.5vh 0;
+    border: var(--text-color) 0.1vh solid;
+}
+
+.dropdown-show {
+    display: block !important
+}
+
+.bar-block .bar-item {
+    background-color: var(--selected-color);
+    display: block;
+    padding: 0.5vw 1vw;
+    border: none;
+    white-space: normal;
+    width: 100%;
+}
+
+.dropdown {
+    position: relative;
+    float: right !important;
+}
+
+.dropdown-button {
+    animation: fadeIn ease 2s;
+    margin: 1.5vw !important;
+    font-size: 2vw !important;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+}
+
+.dropdown-area {
+    right: 0;
+    color: var(--text-color);
+    background-color: var(--selected-color);
+    display: none;
+    position: absolute;
+    width: 15vw;
+    z-index: 1
+}
+
+.dropped-button-logo {
+    position: relative;
+    float: right;
+    right: 1vw;
+    font-size: 1.5vw;
+    margin: 0.2vw 1vw 0.2vw 0;
+}
+
+.dropped-button {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: 1.5vw;
+    border: none;
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.dropped-button:focus {
+    border: none !important;
+}
+
+.dropdown-hover {
+    position: relative;
+    display: inline-block;
+}
