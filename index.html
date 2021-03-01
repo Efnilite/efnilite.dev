@@ -6,6 +6,7 @@
     <link rel="shortcut icon" href="images/logo.png">
     <link href="style/style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/general.js"></script>
 </head>
 <body>
@@ -15,15 +16,23 @@
         </a>
 
         <div class="dropdown dropdown-hover">
-            <button onclick="toggleMenu()" class="dropped-button"><i class="material-icons dropdown-button">settings</i>
+            <button onclick="toggleMenu()" id="settings" class="dropped-button"><i class="material-icons dropdown-button">settings</i>
             </button>
             <div id="dropdown" class="dropdown-area bar-block">
                 <a href="javascript:void(0)" onclick="toggleDark(true)" class="bar-item dropped-button">Dark mode
-                    <span class="material-icons dropped-button-logo" style="transition: 0.5s;" id="dark-toggle"></span>
+                    <span class="material-icons dropped-button-logo" id="dark-toggle"></span>
                 </a>
-                <div class="dropdown-line"></div>
+                <a href="javascript:void(0)" onclick="" class="bar-item dropped-button">Language
+                    <span class="dropped-button-logo" id="lang-toggle"></span>
+                </a>
             </div>
         </div>
     </div>
+    <div class="main">
+        <h1 class="translatable">Heya.</h1>
+    </div>
 </body>
+<footer class="cookies">
+    <p>Hallo gamer</p>
+</footer>
 </html>

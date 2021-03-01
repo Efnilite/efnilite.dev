@@ -5,9 +5,18 @@
 
 body {
     background-color: var(--navbar-color);
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* --------------------------------------------------------------------- */
+
+.main {
+    animation: fadeIn ease 2s !important;
+}
 
 :root {
     --primary-color: white;
@@ -32,6 +41,15 @@ body {
     margin-left: 47%;
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
 @keyframes fadeIn {
     0% {
         opacity:0;
@@ -47,6 +65,22 @@ body {
     height: 5vw;
 }
 
+
+/* --------------------------------------------------------------------- */
+/* Cookies (yum) */
+
+.cookies {
+    margin-top: 20vw;
+    text-align: center;
+    height: 5vw;
+    background-color: #4caf50;
+    vertical-align: bottom;
+}
+
+.invisible {
+    display: none !important;
+}
+
 /* --------------------------------------------------------------------- */
 /* Dropdown */
 
@@ -58,7 +92,8 @@ body {
 }
 
 .dropdown-show {
-    display: block !important
+    display: block !important;
+    animation: fadeIn ease 0.1s;
 }
 
 .bar-block .bar-item {
@@ -89,7 +124,8 @@ body {
     background-color: var(--selected-color);
     display: none;
     position: absolute;
-    width: 15vw;
+    width: 20vw;
+    min-height: 50vw;
     z-index: 1
 }
 
