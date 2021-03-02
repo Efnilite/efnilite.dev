@@ -53,9 +53,11 @@ function translate() {
 
 function initPage() {
     if (canStore()) {
+        if (localStorage.getItem("darkmode") != null) {
+            allowCookies = true;
+        }
         darkmode = localStorage.getItem("darkmode") === "true";
         if (darkmode) {
-            allowCookies = true;
             toggleDark(false);
         }
         language = localStorage.getItem("language");
@@ -63,11 +65,11 @@ function initPage() {
             language = "en";
         }
     }
-    $.ajax({url: "./lang/" + language + ".json"}, {dataType: 'json', async: false, success: function (gathered) {
-            langKeys = gathered;
-            console.log(gathered.length)
-            translate();
-        }});
+    // $.ajax({url: "./lang/" + language + ".json"}, {dataType: 'json', async: false, success: function (gathered) {
+    //         langKeys = gathered;
+    //         console.log(gathered.length)
+    //         translate();
+    //     }});
 }
 
 /**
