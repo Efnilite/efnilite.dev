@@ -1,20 +1,22 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     box-sizing: border-box;
 }
 
 p {
     font-size: 1.25rem;
+    color: var(--text-color);
 }
 
 h2 {
-    font-size: 1.75rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
 }
 
 body {
     background-color: var(--navbar-color);
+    overflow: hidden;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -28,6 +30,7 @@ a {
     animation: fadeIn ease 2s !important;
     overflow-x: hidden;
     overflow-y: scroll;
+    height: 100vh;
 }
 
 :root {
@@ -220,20 +223,26 @@ a {
     display: inline-block;
 }
 
-/*!* Scroll bar *!*/
+/* Scroll bar */
 
-/*::-webkit-scrollbar {*/
-/*    width: 1vw;*/
-/*}*/
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #808080 var(--selected-color);
+}
 
-/*::-webkit-scrollbar-track {*/
-/*    background: black;*/
-/*}*/
+::-webkit-scrollbar {
+    width: 0.4vw;
+}
 
-/*::-webkit-scrollbar-thumb {*/
-/*    background: black;*/
-/*}*/
+::-webkit-scrollbar-track {
+    background: var(--selected-color);
+}
 
-/*::-webkit-scrollbar-thumb:hover {*/
-/*    background: black;*/
-/*}*/
+::-webkit-scrollbar-thumb {
+    background: #808080;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #333333;
+}
