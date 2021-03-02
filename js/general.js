@@ -27,15 +27,19 @@ function toggleDark(invert) {
         document.body.classList.toggle("darkmode");
         if (canStore() && invert) {
             darkmode = !darkmode;
-            if (allowCookies) {
-                localStorage.setItem("darkmode", `${darkmode}`);
-            }
+            localStorage.setItem("darkmode", `${darkmode}`);
         }
         let value = "toggle_on";
         if (darkmode === false) {
             value = "toggle_off";
         }
         document.getElementById("dark-toggle").innerHTML = value;
+    }
+}
+
+function toggleLanguage() {
+    if (askCookies()) {
+        document.getElementById("language-display").classList.toggle("invisible");
     }
 }
 
@@ -49,14 +53,14 @@ function translate() {
 
 function initPage() {
     if (canStore()) {
+        darkmode = localStorage.getItem("darkmode") === "true";
+        if (darkmode) {
+            allowCookies = true;
+            toggleDark(false);
+        }
         language = localStorage.getItem("language");
         if (language == null) {
             language = "en";
-            allowCookies = false;
-        }
-        darkmode = localStorage.getItem("darkmode") === "true";
-        if (darkmode) {
-            toggleDark(false);
         }
     }
     $.ajax({url: "./lang/" + language + ".json"}, {dataType: 'json', async: false, success: function (gathered) {
@@ -81,6 +85,7 @@ function canStore() {
 function toggleMenu() {
     const list = document.getElementById("dropdown").classList;
     list.toggle("dropdown-show");
+    console.log("toggle")
     if (list.contains("dropdown-show")) {
         document.getElementById("settings").style.transform = 'rotate(90deg)';
         let value = "toggle_on";

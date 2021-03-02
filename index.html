@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Efnilite</title>
     <link rel="shortcut icon" href="images/logo.png">
     <link href="style/style.css" type="text/css" rel="stylesheet">
@@ -10,13 +11,21 @@
     <script src="js/general.js"></script>
 </head>
 <body>
-    <div id="cookie-display" class="message-background invisible">
+    <div id="language-display" class="message-background flex-center invisible">
+        <div class="message">
+            <h2>Select your language</h2><span class="lined-br"></span>
+            <div style="display: inline-block;">
+                <p class="message-select" onclick="language = 'en'">English</p><br>
+                <p class="message-select" onclick="language = 'nl'">Nederlands</p>
+            </div>
+        </div>
+    </div>
+    <div id="cookie-display" class="message-background flex-center invisible">
         <div class="message">
             <h2>You need to accept cookies to enable dark mode</h2><span class="lined-br"></span>
             <p>You need to consent to cookies to enable the storing of whether you want to disable or enable dark mode on return.
                 All that will be stored on your computer is a bit of data that will tell the website whether you want it on on or off.
-                This is required due to a law of the European Union, called the 'Cookie Law', short for Directive 2009/136,
-                which was amending the Privacy and Electronic Communications Directive 2002/58/EC."</p>
+                (if I don't add this I could get fined <strong>20 million euros</strong>, so..)</p>
             <div style="display: inline-block;">
                 <button class="message-button" style="background-color: green" onclick="setCookies(true)">Allow</button>
                 <button class="message-button" style="background-color: red" onclick="setCookies(false)">Disallow</button>
@@ -35,14 +44,23 @@
                 <a href="javascript:void(0)" onclick="toggleDark(true)" class="bar-item dropped-button">Dark mode
                     <span class="material-icons dropped-button-logo" id="dark-toggle"></span>
                 </a>
-                <a href="javascript:void(0)" onclick="" class="bar-item dropped-button">Language
-                    <span class="dropped-button-logo" id="lang-toggle"></span>
-                </a>
+                <a href="javascript:void(0)" onclick="toggleLanguage()" class="bar-item dropped-button">Language</a>
             </div>
         </div>
     </div>
     <div class="main">
-        <h1 class="translatable">darkmode</h1>
+        <div class="flex-center">
+            <img src="images/logo.png" width="300" height="300" alt="Efnilite logo">
+            <div class="flex-column">
+                <h1>Hey.</h1>
+                <p>I'm Efnilite, welcome to my page.</p>
+            </div>
+        </div>
+        <h1 class="">d</h1>
+        <h1 class="">d</h1>
+        <h1 class="">d</h1>
+        <h1 class="">d</h1>
+        <h1 class="">d</h1>
     </div>
 </body>
 </html>

@@ -1,11 +1,20 @@
 * {
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+h2 {
+    font-size: 1.75rem;
 }
 
 body {
     background-color: var(--navbar-color);
-    overflow: hidden;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -17,6 +26,8 @@ a {
 
 .main {
     animation: fadeIn ease 2s !important;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 :root {
@@ -53,10 +64,10 @@ a {
 
 @keyframes fadeIn {
     0% {
-        opacity:0;
+        opacity: 0;
     }
     100% {
-        opacity:1;
+        opacity: 1;
     }
 }
 
@@ -70,6 +81,17 @@ a {
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
 
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
 .message {
     z-index: 100;
     display: flex;
@@ -80,8 +102,8 @@ a {
     max-width: 30vw;
     padding: 1vw;
     flex-direction: column;
-    background-color: var(--selected-color);
-    color: var(--text-color);
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
 }
 
 .lined-br {
@@ -91,12 +113,19 @@ a {
     border: var(--text-color) 0.1vh solid;
 }
 
+.message-select {
+    width: 100%;
+    height: 2vw;
+    background-color: var(--selected-color);
+}
+
 .message-button {
-    width: 4vw;
+    width: 7vw;
     height: 2.5vw;
     padding: 0.2vw 0.1vw;
-    margin: 1vw 3vw 0 3vw;
+    margin: 2vw 3vw 0 3vw;
     color: white;
+    opacity: 1;
     text-align: center;
     border: 0 none;
     font-size: 1vw;
@@ -107,14 +136,11 @@ a {
 }
 
 .message-background {
-    display: flex;
-    background-color: black !important;
-    opacity: 0.6 !important;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     height: 100%;
     position: absolute;
-    align-items: center;
-    justify-content: center;
 }
 
 .invisible {
@@ -142,7 +168,7 @@ a {
     padding: 0.5vw 1vw;
     border: none;
     white-space: normal;
-    width: 100%;
+    width: 20vw;
 }
 
 .dropdown {
@@ -172,7 +198,7 @@ a {
     position: relative;
     float: right;
     right: 1vw;
-    font-size: 1.5vw;
+    font-size: 1.5vw !important;
     margin: 0.2vw 1vw 0.2vw 0;
 }
 
@@ -193,3 +219,21 @@ a {
     position: relative;
     display: inline-block;
 }
+
+/*!* Scroll bar *!*/
+
+/*::-webkit-scrollbar {*/
+/*    width: 1vw;*/
+/*}*/
+
+/*::-webkit-scrollbar-track {*/
+/*    background: black;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb {*/
+/*    background: black;*/
+/*}*/
+
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: black;*/
+/*}*/
