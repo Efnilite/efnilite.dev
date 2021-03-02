@@ -6,26 +6,36 @@ let allowCookies = false;
 let darkmode = false;
 window.onload = initPage;
 
+function askCookies() {
+    if (!allowCookies) {
+        toggleMenu();
+        document.getElementById("cookie-display").classList.remove("invisible");
+    }
+    return allowCookies;
+}
+
+function setCookies(cookies) {
+    allowCookies = cookies;
+    document.getElementById("cookie-display").classList.add("invisible");
+}
+
 /**
  * Toggles dark mode
  */
 function toggleDark(invert) {
-    document.body.classList.toggle("darkmode");
-    if (canStore() && invert) {
-        darkmode = !darkmode;
-        if (allowCookies) {
-            localStorage.setItem("darkmode", `${darkmode}`);
+    if (askCookies()) {
+        document.body.classList.toggle("darkmode");
+        if (canStore() && invert) {
+            darkmode = !darkmode;
+            if (allowCookies) {
+                localStorage.setItem("darkmode", `${darkmode}`);
+            }
         }
-    }
-    document.getElementById("dark-toggle").innerHTML = logo();
-}
-
-function logo() {
-    switch (darkmode) {
-        case true:
-            return "toggle_on";
-        case false:
-            return "toggle_off";
+        let value = "toggle_on";
+        if (darkmode === false) {
+            value = "toggle_off";
+        }
+        document.getElementById("dark-toggle").innerHTML = value;
     }
 }
 
@@ -42,13 +52,14 @@ function initPage() {
         language = localStorage.getItem("language");
         if (language == null) {
             language = "en";
+            allowCookies = false;
         }
         darkmode = localStorage.getItem("darkmode") === "true";
         if (darkmode) {
             toggleDark(false);
         }
     }
-    $.ajax({url: "./lang/" + language + ".json", dataType: 'json', async: false, success: function (gathered) {
+    $.ajax({url: "./lang/" + language + ".json"}, {dataType: 'json', async: false, success: function (gathered) {
             langKeys = gathered;
             console.log(gathered.length)
             translate();
@@ -73,7 +84,7 @@ function toggleMenu() {
     if (list.contains("dropdown-show")) {
         document.getElementById("settings").style.transform = 'rotate(90deg)';
         let value = "toggle_on";
-        if (darkmode === false) {
+        if (!darkmode) {
             value = "toggle_off";
         }
         document.getElementById("dark-toggle").innerHTML = value;

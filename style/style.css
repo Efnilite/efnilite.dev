@@ -6,6 +6,7 @@
 body {
     background-color: var(--navbar-color);
     overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -69,12 +70,51 @@ a {
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
 
-.cookies {
-    margin-top: 20vw;
+.message {
+    z-index: 100;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    height: 5vw;
-    background-color: #4caf50;
-    vertical-align: bottom;
+    height: auto;
+    min-width: 25vw;
+    max-width: 30vw;
+    padding: 1vw;
+    flex-direction: column;
+    background-color: var(--selected-color);
+    color: var(--text-color);
+}
+
+.lined-br {
+    width: auto;
+    max-height: 10px;
+    margin: 1vw;
+    border: var(--text-color) 0.1vh solid;
+}
+
+.message-button {
+    width: 4vw;
+    height: 2.5vw;
+    padding: 0.2vw 0.1vw;
+    margin: 1vw 3vw 0 3vw;
+    color: white;
+    text-align: center;
+    border: 0 none;
+    font-size: 1vw;
+}
+
+.message-button:hover {
+    cursor: pointer;
+}
+
+.message-background {
+    display: flex;
+    background-color: black !important;
+    opacity: 0.6 !important;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
 }
 
 .invisible {
@@ -115,7 +155,6 @@ a {
     margin: 1.5vw !important;
     font-size: 2vw !important;
     color: var(--text-color);
-    background-color: var(--primary-color);
 }
 
 .dropdown-area {
@@ -139,7 +178,6 @@ a {
 
 .dropped-button {
     display: inline-block;
-    font-family: 'Open Sans', sans-serif !important;
     font-size: 1.5vw;
     border: none;
     color: var(--text-color);

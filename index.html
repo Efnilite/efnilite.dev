@@ -10,6 +10,19 @@
     <script src="js/general.js"></script>
 </head>
 <body>
+    <div id="cookie-display" class="message-background invisible">
+        <div class="message">
+            <h2>You need to accept cookies to enable dark mode</h2><span class="lined-br"></span>
+            <p>You need to consent to cookies to enable the storing of whether you want to disable or enable dark mode on return.
+                All that will be stored on your computer is a bit of data that will tell the website whether you want it on on or off.
+                This is required due to a law of the European Union, called the 'Cookie Law', short for Directive 2009/136,
+                which was amending the Privacy and Electronic Communications Directive 2002/58/EC."</p>
+            <div style="display: inline-block;">
+                <button class="message-button" style="background-color: green" onclick="setCookies(true)">Allow</button>
+                <button class="message-button" style="background-color: red" onclick="setCookies(false)">Disallow</button>
+            </div>
+        </div>
+    </div>
     <div class="navbar">
         <a href="index.html">
             <img src="images/logo.png" class="logo" alt="Efnilite logo">
@@ -29,10 +42,7 @@
         </div>
     </div>
     <div class="main">
-        <h1 class="translatable">Heya.</h1>
+        <h1 class="translatable">darkmode</h1>
     </div>
 </body>
-<footer class="cookies">
-    <p>Hallo gamer</p>
-</footer>
 </html>
