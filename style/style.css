@@ -84,14 +84,14 @@ a {
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
 
-.flex-center-section {
+.flex-center {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
 
-.flex-center {
+.centered {
     display: flex;
     align-items: center;
     justify-content: center;
