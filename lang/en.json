@@ -1,6 +1,16 @@
 {
-  "localname": "English",
-  "darkmode": "Darkmode",
-  "darkmode-enable-title": "You need to accept cookies to enable dark mode",
-  "darkmode-enable-desc": "You need to consent to cookies to enable the storing of whether you want to disable or enable dark mode on return. All that will be stored on your computer is a bit of data that will tell the website whether you want it on on or off. This is required due to a law of the European Union, called the 'Cookie Law', short for Directive 2009/136, which was amending the Privacy and Electronic Communications Directive 2002/58/EC."
+  "0": "English",
+  "1": "Darkmode",
+  "2": "You need to accept cookies to change your settings",
+  "3": "You need to consent to cookies to enable the storing of your settings if you return to this website. All that will be stored on your computer is a bit of data that will tell the website what settings you have set. (if I don't add this I could get fined 20 million euros, so..)",
+  "4": "Language",
+  "5": "Select your language",
+  "6": "Change cookies",
+  "7": "Yo.",
+  "8": "I'm Efnilite, welcome to my page.",
+  "9": "About me",
+  "10": "Known online as Efnilite, I'm a Dutch software developer, mainly focused on Java and web design.",
+  "11": "I've been developing in code since I was 10. I started with Minecraft command blocks, which got me interested in this field.",
+  "12": "I started using Java when I was 12, which means I've already got over 4 years of actual coding experience, despite being 16.",
+  "13": "View this site's source"
 }

@@ -1,16 +1,47 @@
-// Dark mode
+// const rollup = require('rollup');
+// const json = require('@rollup/plugin-json');
 
 let language = "en";
 let langKeys;
 let allowCookies = false;
 let darkmode = false;
 let pendingAfterAccept;
-window.onload = initPage;
+
+$(document).ready(function () {
+    // const test = require("../lang/en.json");
+    // console.log(test);
+
+    // $.getJSON("lang/en.json", function(json) {
+    //     langKeys = json;
+    //     console.log(json.values.length);
+    //     translate();
+    // });
+
+    if (canStore()) {
+        if (localStorage.getItem("darkmode") != null) {
+            allowCookies = true;
+        }
+        darkmode = localStorage.getItem("darkmode") === "true";
+        if (darkmode) {
+            toggleDark(false);
+        }
+        language = localStorage.getItem("language");
+        if (language == null) {
+            language = "en";
+        }
+    }
+});
+
+$("#dropdown").click(function () {
+    if ($("#dropdown").hasClass("dropdown-show")) {
+        toggleMenu();
+    }
+});
 
 function askCookies() {
     if (!allowCookies) {
         toggleMenu();
-        document.getElementById("cookie-display").classList.remove("invisible");
+        $("#cookie-display").removeClass("invisible");
     } else {
         pendingAfterAccept = null;
     }
@@ -19,7 +50,7 @@ function askCookies() {
 
 function setCookies(cookies) {
     allowCookies = cookies;
-    document.getElementById("cookie-display").classList.add("invisible");
+    $("#cookie-display").addClass("invisible");
     switch (pendingAfterAccept) {
         case "darkmode":
             toggleDark(true);
@@ -30,13 +61,10 @@ function setCookies(cookies) {
     }
 }
 
-/**
- * Toggles dark mode
- */
 function toggleDark(invert) {
     pendingAfterAccept = "darkmode";
     if (askCookies()) {
-        document.body.classList.toggle("darkmode");
+        $("body").toggleClass("darkmode");
         if (canStore() && invert) {
             darkmode = !darkmode;
             localStorage.setItem("darkmode", `${darkmode}`);
@@ -52,7 +80,7 @@ function toggleDark(invert) {
 function toggleLanguage() {
     pendingAfterAccept = "language";
     if (askCookies()) {
-        document.getElementById("language-display").classList.toggle("invisible");
+        $("#language-display").toggleClass("invisible");
     }
 }
 
@@ -60,39 +88,31 @@ function setLanguage(close) {
     if (close) {
         toggleLanguage();
     }
-
+    translate();
 }
 
 function translate() {
-    // let strings = document.getElementsByClassName("translatable");
-    // for (let string of strings) {
-    //     let key = string.textContent;
-    //     string.textContent = langKeys.get(key); // todo fix
-    // }
+    let strings = $(".translatable");
+    for (let string of strings) {
+        string.innerHTML = langKeys.values[parseInt(string.textContent)];
+    }
 }
 
-function initPage() {
-    document.addEventListener('aos:in', ({ detail }) => {
-        console.log('animated in', detail);
-    });
-    if (canStore()) {
-        if (localStorage.getItem("darkmode") != null) {
-            allowCookies = true;
+function toggleMenu() {
+    const dropdown = $("#dropdown");
+    dropdown.toggleClass("dropdown-show");
+    const settings = $("#settings");
+    if (dropdown.hasClass("dropdown-show")) {
+        settings.css("transform", "rotate(90deg)");
+        let value = "toggle_on";
+        if (!darkmode) {
+            value = "toggle_off";
         }
-        darkmode = localStorage.getItem("darkmode") === "true";
-        if (darkmode) {
-            toggleDark(false);
-        }
-        language = localStorage.getItem("language");
-        if (language == null) {
-            language = "en";
-        }
+        $("#dark-toggle").html(value);
+        $("#lang-toggle").html("<p style='font-size: 1vw'> Test");
+    } else {
+        settings.css("transform", "rotate(0)");
     }
-    // $.ajax({url: "./lang/" + language + ".json"}, {dataType: 'json', async: false, success: function (gathered) {
-    //         langKeys = gathered;
-    //         console.log(gathered.length)
-    //         translate();
-    //     }});
 }
 
 /**
@@ -104,21 +124,5 @@ function canStore() {
         return 'localStorage' in window && window['localStorage'] !== null;
     } catch (e) {
         return false;
-    }
-}
-
-function toggleMenu() {
-    const list = document.getElementById("dropdown").classList;
-    list.toggle("dropdown-show");
-    if (list.contains("dropdown-show")) {
-        document.getElementById("settings").style.transform = 'rotate(90deg)';
-        let value = "toggle_on";
-        if (!darkmode) {
-            value = "toggle_off";
-        }
-        document.getElementById("dark-toggle").innerHTML = value;
-        document.getElementById("lang-toggle").innerHTML = "<p style='font-size: 1vw'> " + langKeys.localname;
-    } else {
-        document.getElementById("settings").style.transform = 'rotate(0deg)';
     }
 }

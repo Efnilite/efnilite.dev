@@ -24,6 +24,10 @@ a {
     text-decoration: none;
 }
 
+.translatable {
+
+}
+
 /* --------------------------------------------------------------------- */
 
 .main {
@@ -84,6 +88,15 @@ a {
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
 
+#languages h2 {
+    width: 25vw;
+    text-align: right;
+}
+
+#me p {
+    width: 30vw;
+}
+
 .flex-center {
     display: flex;
     align-items: center;
@@ -117,6 +130,7 @@ a {
 
 .lined-br {
     width: auto;
+    min-width: 7vw;
     max-height: 10px;
     margin: 1vw;
     border: var(--text-color) 0.1vh solid;

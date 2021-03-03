@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="images/logo.png">
     <link href="style/style.css" type="text/css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/general.js"></script>
 </head>
@@ -15,7 +16,7 @@
         <div class="message">
             <h2>Select your language</h2><span class="lined-br"></span>
             <div class="centered flex-column">
-                <p class="message-select" onclick="language = 'en'">English</p><br>
+                <p class="message-select" onclick="language = 'en'">English</p>
                 <p class="message-select" onclick="language = 'nl'">Nederlands</p>
                 <p class="message-select" onclick="language = 'de'">Deutsch</p>
                 <p class="message-select" onclick="language = 'ja'">日本語</p>
@@ -51,13 +52,15 @@
                     <span class="material-icons dropped-button-logo" id="dark-toggle"></span>
                 </a>
                 <a href="javascript:void(0)" onclick="toggleLanguage()" class="bar-item dropped-button">Language
-                    <span class="material-icons dropped-button-logo">language</span></a>
+                    <p class="dropped-button-logo translatable" id="lang-toggle">0</p>
+<!--                    <span class="material-icons dropped-button-logo">language</span>-->
+                </a>
                 <a href="javascript:void(0)" onclick="allowCookies = false; askCookies();" class="bar-item dropped-button">Change cookies
                     <span class="material-icons dropped-button-logo">eject</span></a>
             </div>
         </div>
     </div>
-    <div class="main" onclick="if (document.getElementById('dropdown').classList.contains('dropdown-show')) toggleMenu()">
+    <div class="main">
         <div id="home" class="flex-center">
             <img src="images/logo.png" width="300" height="300" alt="Efnilite logo">
             <div class="flex-column">
@@ -65,10 +68,34 @@
                 <p>I'm Efnilite, welcome to my page.</p>
             </div>
         </div>
-        <div id="me" class="flex-center flex-column">
-            <p>Oui</p>
+        <div id="me" class="flex-center">
+            <div style="margin-right: 2vw;" class="flex-center flex-column">
+                <h2>About me</h2><br>
+                <p>Known online as Efnilite, I'm a Dutch software developer, mainly focused on Java and web design.</p>
+                <div class="lined-br"></div>
+                <p>I've been developing in code since I was 10. I started with Minecraft command blocks, which got me interested in this field.</p><br>
+                <p>I started using Java when I was 12, which means I've already got over 4 years of actual coding experience, despite being 16.</p>
+            </div>
+            <div class="flex-center flex-column">
+                <img src="images/command-blocks.png" width="400" height="250" alt="Command blocks">
+                <img src="images/statue.png" width="400" height="250" alt="Statue">
+            </div>
         </div>
-        <div id="contact"></div>
+        <div id="languages">
+            <div class="flex-center">
+                <div class="flex-center flex-column">
+                    <img src="images/js.png" width="200" height="200" alt="Js">
+                    <img src="images/html5.png" width="200" height="200" alt="Html5">
+                </div>
+                <div class="flex-center flex-column">
+                    <img src="images/java.png" width="200" height="200" alt="Java">
+                    <img src="images/kotlin.png" width="200" height="200" alt="Kotlin">
+                </div>
+                <div class="flex-center flex-column">
+                    <h2>The languages I know</h2>
+                </div>
+            </div>
+        </div>
         <div class="flex-center flex-column footer">
             <p>&copy; Efnilite 2021</p>
             <a href="https://github.com/Efnilite/efnilite.dev" target="_blank">View this site's source</a>
