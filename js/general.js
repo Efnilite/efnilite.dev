@@ -4,12 +4,15 @@ let language = "en";
 let langKeys;
 let allowCookies = false;
 let darkmode = false;
+let pendingAfterAccept;
 window.onload = initPage;
 
 function askCookies() {
     if (!allowCookies) {
         toggleMenu();
         document.getElementById("cookie-display").classList.remove("invisible");
+    } else {
+        pendingAfterAccept = null;
     }
     return allowCookies;
 }
@@ -17,12 +20,21 @@ function askCookies() {
 function setCookies(cookies) {
     allowCookies = cookies;
     document.getElementById("cookie-display").classList.add("invisible");
+    switch (pendingAfterAccept) {
+        case "darkmode":
+            toggleDark(true);
+            break;
+        case "language":
+            toggleLanguage();
+            break;
+    }
 }
 
 /**
  * Toggles dark mode
  */
 function toggleDark(invert) {
+    pendingAfterAccept = "darkmode";
     if (askCookies()) {
         document.body.classList.toggle("darkmode");
         if (canStore() && invert) {
@@ -38,6 +50,7 @@ function toggleDark(invert) {
 }
 
 function toggleLanguage() {
+    pendingAfterAccept = "language";
     if (askCookies()) {
         document.getElementById("language-display").classList.toggle("invisible");
     }
@@ -97,7 +110,6 @@ function canStore() {
 function toggleMenu() {
     const list = document.getElementById("dropdown").classList;
     list.toggle("dropdown-show");
-    console.log("toggle")
     if (list.contains("dropdown-show")) {
         document.getElementById("settings").style.transform = 'rotate(90deg)';
         let value = "toggle_on";

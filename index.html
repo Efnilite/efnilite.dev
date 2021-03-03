@@ -17,6 +17,8 @@
             <div class="centered flex-column">
                 <p class="message-select" onclick="language = 'en'">English</p><br>
                 <p class="message-select" onclick="language = 'nl'">Nederlands</p>
+                <p class="message-select" onclick="language = 'de'">Deutsch</p>
+                <p class="message-select" onclick="language = 'ja'">日本語</p>
             </div>
             <div style="margin-top: 2vw;" class="centered">
                 <span class="material-icons message-button" onclick="setLanguage(true)">clear</span>
@@ -55,7 +57,7 @@
             </div>
         </div>
     </div>
-    <div class="main">
+    <div class="main" onclick="if (document.getElementById('dropdown').classList.contains('dropdown-show')) toggleMenu()">
         <div id="home" class="flex-center">
             <img src="images/logo.png" width="300" height="300" alt="Efnilite logo">
             <div class="flex-column">

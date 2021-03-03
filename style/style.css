@@ -126,7 +126,7 @@ a {
     width: 100%;
     height: auto;
     max-height: 2.5vw;
-    padding: 0.1vw;
+    padding: 0.2vw;
     background-color: var(--primary-color);
 }
 
@@ -180,7 +180,7 @@ a {
 
 .dropdown-show {
     display: block !important;
-    animation: fadeIn ease 0.1s;
+    animation: fadeIn ease 0.2s;
 }
 
 .bar-block .bar-item {
