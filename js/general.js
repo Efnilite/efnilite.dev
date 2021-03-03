@@ -1,6 +1,3 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
 // Dark mode
 
 let language = "en";
@@ -8,7 +5,6 @@ let langKeys;
 let allowCookies = false;
 let darkmode = false;
 window.onload = initPage;
-AOS.init();
 
 function askCookies() {
     if (!allowCookies) {
@@ -107,18 +103,3 @@ function toggleMenu() {
         document.getElementById("settings").style.transform = 'rotate(0deg)';
     }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    async function setLinks() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    }
-
-    setLinks();
-})
