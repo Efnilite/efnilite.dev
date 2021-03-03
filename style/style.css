@@ -10,7 +10,7 @@ p {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--text-color);
 }
 
@@ -39,6 +39,7 @@ a {
     --navbar-color: #ebebeb;
     --selected-color: #c9c9c9;
     --fillable-color: white;
+    --cyan: #0097a7;
 }
 
 .darkmode {
@@ -83,11 +84,17 @@ a {
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
 
-.flex-center {
+.flex-center-section {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .flex-column {
@@ -117,11 +124,23 @@ a {
 
 .message-select {
     width: 100%;
-    height: 2vw;
+    height: auto;
+    max-height: 2.5vw;
+    padding: 0.1vw;
+    background-color: var(--primary-color);
+}
+
+#language-display .message-button {
+    margin: 0 1vw;
+}
+
+.message-select:hover {
+    cursor: pointer;
+    transition: 0.3s;
     background-color: var(--selected-color);
 }
 
-.message-button {
+#cookie-display .message-button {
     width: 7vw;
     height: 2.5vw;
     padding: 0.2vw 0.1vw;
@@ -256,7 +275,7 @@ a {
     bottom: 5vw;
     width: 100vw;
     height: 5vw;
-    background-color: #0097a7;
+    background-color: var(--cyan);
 }
 
 .footer p {

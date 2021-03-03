@@ -43,12 +43,19 @@ function toggleLanguage() {
     }
 }
 
-function translate() {
-    let strings = document.getElementsByClassName("translatable");
-    for (let string of strings) {
-        let key = string.textContent;
-        string.textContent = langKeys.get(key); // todo fix
+function setLanguage(close) {
+    if (close) {
+        toggleLanguage();
     }
+
+}
+
+function translate() {
+    // let strings = document.getElementsByClassName("translatable");
+    // for (let string of strings) {
+    //     let key = string.textContent;
+    //     string.textContent = langKeys.get(key); // todo fix
+    // }
 }
 
 function initPage() {

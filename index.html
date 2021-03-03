@@ -11,24 +11,28 @@
     <script src="js/general.js"></script>
 </head>
 <body>
-    <div id="language-display" class="message-background flex-center invisible">
+    <div id="language-display" class="message-background flex-center-section invisible">
         <div class="message">
             <h2>Select your language</h2><span class="lined-br"></span>
-            <div style="display: inline-block;">
+            <div class="flex-center flex-column">
                 <p class="message-select" onclick="language = 'en'">English</p><br>
                 <p class="message-select" onclick="language = 'nl'">Nederlands</p>
             </div>
+            <div style="margin-top: 2vw;" class="flex-center">
+                <span class="material-icons message-button" onclick="setLanguage(true)">clear</span>
+                <span class="material-icons message-button">done</span>
+            </div>
         </div>
     </div>
-    <div id="cookie-display" class="message-background flex-center invisible">
+    <div id="cookie-display" class="message-background flex-center-section invisible">
         <div class="message">
-            <h2>You need to accept cookies to enable dark mode</h2><span class="lined-br"></span>
-            <p>You need to consent to cookies to enable the storing of whether you want to disable or enable dark mode on return.
-                All that will be stored on your computer is a bit of data that will tell the website whether you want it on on or off.
+            <h2>You need to accept cookies to change your settings</h2><span class="lined-br"></span>
+            <p>You need to consent to cookies to enable the storing of your settings if you return to this website.
+                All that will be stored on your computer is a bit of data that will tell the website what settings you have set.
                 (if I don't add this I could get fined <strong>20 million euros</strong>, so..)</p>
             <div style="display: inline-block;">
-                <button class="message-button" style="background-color: green" onclick="setCookies(true)">Allow</button>
-                <button class="message-button" style="background-color: red" onclick="setCookies(false)">Disallow</button>
+                <button class="message-button" style="background-color: var(--selected-color)" onclick="setCookies(false)">Disallow</button>
+                <button class="message-button" style="background-color: var(--cyan)" onclick="setCookies(true)">Allow</button>
             </div>
         </div>
     </div>
@@ -44,23 +48,26 @@
                 <a href="javascript:void(0)" onclick="toggleDark(true)" class="bar-item dropped-button">Dark mode
                     <span class="material-icons dropped-button-logo" id="dark-toggle"></span>
                 </a>
-                <a href="javascript:void(0)" onclick="toggleLanguage()" class="bar-item dropped-button">Language</a>
+                <a href="javascript:void(0)" onclick="toggleLanguage()" class="bar-item dropped-button">Language
+                    <span class="material-icons dropped-button-logo">language</span></a>
+                <a href="javascript:void(0)" onclick="allowCookies = false; askCookies();" class="bar-item dropped-button">Change cookies
+                    <span class="material-icons dropped-button-logo">eject</span></a>
             </div>
         </div>
     </div>
     <div class="main">
-        <div id="home" class="flex-center">
+        <div id="home" class="flex-center-section">
             <img src="images/logo.png" width="300" height="300" alt="Efnilite logo">
             <div class="flex-column">
                 <h2>Hey.</h2>
                 <p>I'm Efnilite, welcome to my page.</p>
             </div>
         </div>
-        <div id="me" class="flex-center flex-column">
+        <div id="me" class="flex-center-section flex-column">
             <p>Oui</p>
         </div>
         <div id="contact"></div>
-        <div class="flex-center flex-column footer">
+        <div class="flex-center-section flex-column footer">
             <p>&copy; Efnilite 2021</p>
             <a href="https://github.com/Efnilite/efnilite.dev" target="_blank">View this site's source</a>
             <p>&heartsuit;</p>
