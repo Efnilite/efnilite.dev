@@ -11,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/general.js"></script>
 </head>
-<body>
+<body ondragstart="return false;" ondrop="return false;">
     <div id="language-display" class="message-background centered invisible">
         <div class="message">
             <h2>Select your language</h2><span class="lined-br"></span>
@@ -20,6 +20,7 @@
                 <p class="message-select" onclick="language = 'nl'">Nederlands</p>
                 <p class="message-select" onclick="language = 'de'">Deutsch</p>
                 <p class="message-select" onclick="language = 'ja'">日本語</p>
+                <p>This feature is currently in development.</p>
             </div>
             <div style="margin-top: 2vw;" class="centered">
                 <span class="material-icons message-button" onclick="setLanguage(true)">clear</span>
@@ -81,23 +82,31 @@
                 <img src="images/statue.png" width="400" height="250" alt="Statue">
             </div>
         </div>
-        <div id="languages">
-            <div class="flex-center">
-                <div class="flex-center flex-column">
+        <div id="languages" class="flex-center">
+            <div class="flex-center flex-column">
+                <div class="centered">
+                    <img src="images/java.png" width="200" height="200" alt="Java">
                     <img src="images/js.png" width="200" height="200" alt="Js">
+                    <img src="images/skript.png" width="200" height="200" alt="Skript">
+                    <img src="images/kotlin.png" width="200" height="200" alt="Kotlin">
                     <img src="images/html5.png" width="200" height="200" alt="Html5">
                 </div>
-                <div class="flex-center flex-column">
-                    <img src="images/java.png" width="200" height="200" alt="Java">
-                    <img src="images/kotlin.png" width="200" height="200" alt="Kotlin">
-                </div>
-                <div class="flex-center flex-column">
-                    <h2>The languages I know</h2>
-                </div>
+                <p class="centered">The languages I know</p>
             </div>
         </div>
+        <div id="projects" class="flex-center">
+            <img class="slideshow-image" src="images/projects/witp.png" alt="WITP">
+        </div>
+        <div id="contact" class="flex-center">
+            <a href="https://discord.com/invite/AfRMf9C24y" target="_blank">
+                <img src="images/contact/discord.png" width="50" height="50" alt="Discord">
+            </a>
+            <a href="https://github.com/Efnilite/" target="_blank">
+                <img src="images/contact/github.png" style="color: white" width="50" height="50" alt="Github">
+            </a>
+        </div>
         <div class="flex-center flex-column footer">
-            <p>&copy; Efnilite 2021</p>
+            <p>&copy;Efnilite 2021</p>
             <a href="https://github.com/Efnilite/efnilite.dev" target="_blank">View this site's source</a>
             <p>&heartsuit;</p>
         </div>

@@ -1,6 +1,3 @@
-// const rollup = require('rollup');
-// const json = require('@rollup/plugin-json');
-
 let language = "en";
 let langKeys;
 let allowCookies = false;
@@ -8,15 +5,6 @@ let darkmode = false;
 let pendingAfterAccept;
 
 $(document).ready(function () {
-    // const test = require("../lang/en.json");
-    // console.log(test);
-
-    // $.getJSON("lang/en.json", function(json) {
-    //     langKeys = json;
-    //     console.log(json.values.length);
-    //     translate();
-    // });
-
     if (canStore()) {
         if (localStorage.getItem("darkmode") != null) {
             allowCookies = true;
@@ -24,10 +12,6 @@ $(document).ready(function () {
         darkmode = localStorage.getItem("darkmode") === "true";
         if (darkmode) {
             toggleDark(false);
-        }
-        language = localStorage.getItem("language");
-        if (language == null) {
-            language = "en";
         }
     }
 });
@@ -109,7 +93,7 @@ function toggleMenu() {
             value = "toggle_off";
         }
         $("#dark-toggle").html(value);
-        $("#lang-toggle").html("<p style='font-size: 1vw'> Test");
+        $("#lang-toggle").html("<p style='font-size: 1vw'> English");
     } else {
         settings.css("transform", "rotate(0)");
     }

@@ -28,6 +28,29 @@ a {
 
 }
 
+#me p {
+    width: 30vw;
+}
+
+#languages p {
+    margin-top: 5vw;
+}
+
+#contact img {
+    margin: 4vw;
+}
+
+#contact img:hover {
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------- */
+/* Slideshow */
+
+.slideshow-image {
+    max-width: 70vw;
+}
+
 /* --------------------------------------------------------------------- */
 
 .main {
@@ -87,15 +110,6 @@ a {
 
 /* --------------------------------------------------------------------- */
 /* Cookies (yum) */
-
-#languages h2 {
-    width: 25vw;
-    text-align: right;
-}
-
-#me p {
-    width: 30vw;
-}
 
 .flex-center {
     display: flex;

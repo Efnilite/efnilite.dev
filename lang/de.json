@@ -1,16 +1,17 @@
 {
-  "0": "Nederlands",
+  "0": "Deutsch",
   "1": "Nachtmodus",
-  "2": "Je moet cookies accepteren om dit te veranderen",
+  "2": "Du musst cookies akzeptieren om dies zu ändern.",
   "3": "You need to consent to cookies to enable the storing of your settings if you return to this website. All that will be stored on your computer is a bit of data that will tell the website what settings you have set. (if I don't add this I could get fined 20 million euros, so..)",
-  "4": "Taal",
-  "5": "Selecteer je taal",
-  "6": "Verander cookies",
+  "4": "Sprache",
+  "5": "Wähle deine Sprache",
+  "6": "Cookies ändern",
   "7": "Yo.",
-  "8": "Ik ben Efnilite, welkom op mijn pagina.",
-  "9": "Over mij",
-  "10": "Online bekend als Efnilite, ik ben een Nederlandse softwareontwikkelaar die vooral focust op Java en web design.",
+  "8": "Ich bin Efnilite, wilkommen auf meiner Seite.",
+  "9": "Über mich",
+  "10": "Online bekannt als Efnilite, ich bin eine Niederländische softwareontwikkelaar die vooral focust op Java en web design.",
   "11": "I've been developing in code since I was 10. I started with Minecraft command blocks, which got me interested in this field.",
   "12": "I started using Java when I was 12, which means I've already got over 4 years of actual coding experience, despite being 16.",
-  "13": "View this site's source"
+  "13": "Besuch die Quelle dieser Website",
+  "// todo": ""
 }
