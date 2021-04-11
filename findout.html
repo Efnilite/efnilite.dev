@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Efnilite</title>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link href="style/style.css" type="text/css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/general.js"></script>
+</head>
+<body ondragstart="return false;" ondrop="return false;">
+    <div class="main">
+        <div id="findout" class="flex-center">
+            <div class="flex-column">
+                <h2>Hey. ( ͡° ͜ʖ ͡°)</h2>
+                <p onclick="openLink()">Click me to find out.</p>
+            </div>
+        </div>
+    </div>
+</body>
+<style>
+    #findout p {
+        text-decoration: underline;
+    }
+</style>
+<script>
+    function openLink() {
+        window.open("https://www.youtube.com/watch?v=QtBDL8EiNZo", "_parent");
+    }
+</script>
+</html>
